@@ -1,0 +1,82 @@
+[
+  {
+    "name": "Junior Saver",
+    "products": ["Junior Saver Account"],
+    "value": 0,
+    "rules": [
+      {
+        "field": "age",
+        "type": "range",
+        "value": [-1, 18]
+      }
+    ]
+  },
+  {
+    "name": "Student",
+    "products": ["Student Account", "Debit Card", "Credit Card"],
+    "value": 0,
+    "rules": [
+      {
+        "field": "age",
+        "type": "range",
+        "value": [17, -1]
+      },
+      {
+        "field": "isStudent",
+        "type": "bool",
+        "value": true
+      }
+    ]
+  },
+  {
+    "name": "Classic",
+    "products": ["Current Account", "Debit Card"],
+    "value": 1,
+    "rules": [
+      {
+        "field": "age",
+        "type": "range",
+        "value": [17, -1]
+      },
+      {
+        "field": "income",
+        "type": "range",
+        "value": [0, -1]
+      }
+    ]
+  },
+  {
+    "name": "Classic Plus",
+    "products": ["Current Account", "Debit Card", "Credit Card"],
+    "value": 2,
+    "rules": [
+      {
+        "field": "age",
+        "type": "range",
+        "value": [17, -1]
+      },
+      {
+        "field": "income",
+        "type": "range",
+        "value": [12000, -1]
+      }
+    ]
+  },
+  {
+    "name": "Gold",
+    "products": ["Current Account Plus", "Debit Card", "Gold Credit Card"],
+    "value": 3,
+    "rules": [
+      {
+        "field": "age",
+        "type": "range",
+        "value": [17, -1]
+      },
+      {
+        "field": "income",
+        "type": "range",
+        "value": [40000, -1]
+      }
+    ]
+  }
+]

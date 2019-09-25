@@ -1,0 +1,104 @@
+{
+  "Current Account": {
+    "type": "account",
+    "value": 1,
+    "rules": [
+      {
+        "field": "age",
+        "type": "range",
+        "value": [17, -1]
+      },
+      {
+        "field": "income",
+        "type": "range",
+        "value": [0, -1]
+      }
+    ]
+  },
+  "Current Account Plus": {
+    "type": "account",
+    "value": 3,
+    "rules": [
+      {
+        "field": "age",
+        "type": "range",
+        "value": [17, -1]
+      },
+      {
+        "field": "income",
+        "type": "range",
+        "value": [40000, -1]
+      }
+    ]
+  },
+  "Junior Saver Account": {
+    "type": "account",
+    "value": 0,
+    "rules": [
+      {
+        "field": "age",
+        "type": "range",
+        "value": [-1, 18]
+      }
+    ]
+  },
+  "Student Account": {
+    "type": "account",
+    "value": 1,
+    "rules": [
+      {
+        "field": "isStudent",
+        "type": "bool",
+        "value": true
+      },
+      {
+        "field": "age",
+        "type": "range",
+        "value": [17, -1]
+      }
+    ]
+  },
+  "Debit Card": {
+    "type": "debit-card",
+    "value": 0,
+    "rules": [
+      {
+        "field": "",
+        "type": "oneOfProduct",
+        "value": ["Current Account", "Current Account Plus", "Student Account"]
+      }
+    ]
+  },
+  "Credit Card": {
+    "type": "credit-card",
+    "value": 0,
+    "rules": [
+      {
+        "field": "age",
+        "type": "range",
+        "value": [17, -1]
+      },
+      {
+        "field": "income",
+        "type": "range",
+        "value": [12000, -1]
+      }
+    ]
+  },
+  "Gold Credit Card": {
+    "type": "credit-card",
+    "value": 1,
+    "rules": [
+      {
+        "field": "age",
+        "type": "range",
+        "value": [17, -1]
+      },
+      {
+        "field": "income",
+        "type": "range",
+        "value": [40000, -1]
+      }
+    ]
+  }
+}
