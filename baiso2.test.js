@@ -1,4 +1,4 @@
-import { getRecommendBundle, makesAppropriateBundle, isAnswerSatisfyAllRules } from './baiso2';
+import { getRecommendBundle, makesAppropriateBundle } from './baiso2';
 
 describe('baiso2', () => {
   describe('getRecommendBundle', () => {
@@ -131,8 +131,7 @@ describe('baiso2', () => {
     test('should return failed reason', () => {
       const answer = {
         age: 30,
-        income: 0,
-        isStudent: true
+        income: 0
       };
       const bundle = {
         products: ['Current Account', 'Debit Card', 'Credit Card']

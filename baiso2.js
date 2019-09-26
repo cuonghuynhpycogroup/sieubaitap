@@ -36,7 +36,7 @@ const isAnswerSatisfyRule = (answer, rule) => {
       return isValueInRange(answerValue, value);
 
     default:
-      return answerValue !== value;
+      return answerValue === value;
   }
 }
 
@@ -73,10 +73,12 @@ const findModifyFailedReason = (answer) => {
     for(let i=0; i<allProductsKeys.length; i++) {
       const productName = allProductsKeys[i];
       const { rules } = products[productName];
-      if(isAnswerSatisfyAllRules( { [answerKey]: answer[answerKey] }, rules )) {
-        isValid = true;
-        break;
-      }
+      rules.forEach((rule) => {
+        const { field } = rule;
+        if(field === answerKey && isAnswerSatisfyRule({ [answerKey]: answer[answerKey] }, rule)) {
+          isValid = true;
+        }
+      });
     }
 
     if(!isValid) {
@@ -136,6 +138,5 @@ const makesAppropriateBundle = (answer, bundle) => {
 
 export {
   getRecommendBundle,
-  makesAppropriateBundle,
-  isAnswerSatisfyAllRules
+  makesAppropriateBundle
 };
